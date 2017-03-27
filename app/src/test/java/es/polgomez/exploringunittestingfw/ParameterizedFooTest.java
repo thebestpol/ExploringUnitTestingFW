@@ -16,7 +16,7 @@ import static org.junit.runners.Parameterized.Parameters;
  */
 
 @RunWith(Parameterized.class)
-public class ParameterizedTest {
+public class ParameterizedFooTest {
 
     @Parameter
     public String input;
@@ -32,13 +32,7 @@ public class ParameterizedTest {
 
     @Test
     public void parameterizedTest() {
-        assertThat(Foo.isFoo(input), is(expected));
-    }
-
-    static class Foo {
-        public static boolean isFoo(String value) {
-            return value != null && value.contains("foo");
-        }
+        assertThat(SuiteTest.FooBar.isFoo(input), is(expected));
     }
 }
 
